@@ -1,9 +1,23 @@
+// body transition
 window.addEventListener('load', () => {
     const bodyElement = document.body;
     bodyElement.classList.add('visible', 'fadeIn');
     
 });
+// update header text inspired by the picture HTML tag
+function updateCompanyName() {
+    const companyNameElem = document.querySelector('.company-name-small');
+    if (window.innerWidth < 350 || window.innerWidth > 730) {
+        companyNameElem.textContent = 'AE- INTERNATIONAL CONSULTING AND LOGISTICS - ICL';
+    }
+}
 
+
+window.addEventListener('resize', updateCompanyName);
+
+updateCompanyName(); // Call the function on page load
+
+// scroll between pages
 const pages = [{
     button: '#about-page',
     targetPage: '#about-section'
@@ -14,25 +28,39 @@ const pages = [{
     button: '#contact-us-page',
     targetPage: '#contact-us-section'
 }, {
-    button: '.what-we-do',
+    button: '#what-we-do',
     targetPage: '#about-section'
 }, {
-    button: '#company-name',
+    button: '.company-name-small' ?  '.company-name-small': '#company-name',
     targetPage: '.main-page'
 }];
+
+function scrollToDiv(target) {
+    const targetDiv = document.querySelector(target);
+    const offsetTop = targetDiv.offsetTop;
+    const paddingTop = parseInt(window.getComputedStyle(targetDiv).paddingTop);
+    
+    window.scrollTo({
+      top: offsetTop - paddingTop - 100, // the constant is additional padding top
+      behavior: 'smooth'
+    });
+  }
 
 document.addEventListener('DOMContentLoaded', () => {
     pages.forEach(page => {
     document.querySelector(page.button)
         .addEventListener('click', () => {
-            document.querySelector(page.targetPage).scrollIntoView({
-                behavior: 'smooth',
-                block: "start"
-            });
+            if (page.button === '.what-we-do') {
+                alert('What we do clicked');
+                console.log('what we do');
+                
+            }
+            scrollToDiv(page.targetPage);
         });
     });
 });
 
+// Form Submit
 const userName = document.querySelector('.user-name');
 const userEmail = document.querySelector('input[type="email"]');
 const tel = document.querySelector('input[type="tel"]');
@@ -41,6 +69,7 @@ const message = document.querySelector('textarea');
 
 const submitBtn = document.querySelector('input[type="submit"]');
 
+
 function sendMail() {
     let userData = {
         name: userName.value,
@@ -48,6 +77,7 @@ function sendMail() {
         tel: tel.value,
         companyName: companyName.value,
         message: message.value,
+        to_email: userEmail.value
     }
     submitBtn.value = 'Sending...';
     console.log(userData);
@@ -69,11 +99,10 @@ function sendMail() {
             to_name: userData.name,
             from_name: 'AE - International Consulting and Logistics - ICL',
             to_email: userData.email,
-            message: userData.message,
-            reply_to: userData.email
+            message: userData.message
         });
     }).catch(error => {
-        console.log(`Failed ${error.text}`);
+        console.log(`Failed ${error}`);
     });
 
     
@@ -100,4 +129,5 @@ function clearFields(...fields) {
         field.value = '';
     });
 }
+
 

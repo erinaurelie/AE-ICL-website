@@ -15,39 +15,48 @@
     animation: fadeIn 2s ease-in-out;
 }
 
-.company-logo-div {
-    margin: auto;
-    width: fit-content;
-    border: 1px solid black;
-}
-
-.company-logo-div img {
-    height: 30%;
-    width: 30%;
-}
+/* header */
 header {
     margin-bottom: 50px;
 }
-nav {
-    background-color: rgba(64, 224, 208, 0.6);
-    position: fixed;
-    width: 95%;
-    top: 0;
-    display: flex;
-    flex-wrap: none;
-    justify-content: space-between;
-    align-items: center;
-    height: 5rem;
-    padding: 0 3.125rem;
-    font-size: 1.2rem;
-    color: #333333;
-    z-index: 1000;
+
+nav .left-side {
+    font-size: clamp(0.625rem, 0.398rem + 1.136vw, 1.25rem);
 }
 
 nav .right-side {
+    font-size: clamp(0.625rem, 0.466rem + 0.795vw, 1.063rem);
     display: flex;
     gap: 40px;
     cursor: pointer;
+}
+
+/*grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)*/
+nav .company-name-small {
+    font-size: clamp(0.625rem, 0.398rem + 1.136vw, 1.25rem);
+    cursor: pointer;
+}
+
+
+nav {
+    background-color: rgba(64, 224, 208, 0.6);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 3.125rem;
+    font-size: 1.2rem;
+    color: #333333;
+    z-index: 1000; 
+    gap: 40px;
+    width: 100%;
+    height: 10vh;
+}
+
+nav * {
+    white-space: nowrap;
 }
 
 #about-page:hover,
@@ -55,178 +64,4 @@ nav .right-side {
 #contact-us-page:hover,
 .company-name:hover {
     color: white;
-}
-
-html {
-    scroll-padding-top: 10rem;
-}
-
-
-/*
-    min-width this or bigger
-    max-width: this or smaller
-*/
-
-@media (max-width: 1200px) {
-    nav {
-        width: 90%;
-    } 
-
-    #about-section,
-    #services-section,
-    .main-page {
-        height: 100vh !important;
-        width: fit-content !important;
-    }
-
-    .hero-div {
-        margin-top: 50px !important;
-    }
-
-    .flex {
-        padding: 10px 0 !important;
-        font-size: 1.1rem !important;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-    }
-
-    #contact-us-section {
-        margin: 0 !important;
-        padding: 0 32px !important;
-    }
-
-    #contact-us-section h2 {
-        margin-bottom: 0.8rem !important;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .hero-div {
-        margin-top: 0;
-    }
-
-    nav{
-        width: 90%;
-    }
-    .left-side {
-        font-size: 1.1rem;
-    }
-
-    .right-side {
-        font-size: 1rem;
-        gap: 1px;
-    }
-    .company-name {
-        font-family: 'Arial Narrow';
-        letter-spacing: -0.5px;
-    }
-
-    .flex {
-        padding: 10px 0 !important;
-        font-size: 1.1rem !important;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-    }
-
-    .flex img {
-        object-fit: contain;
-    }
-
-    .flex ul {
-        font-size: 1rem;
-    }
-
-    #contact-us-section {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-
-    #contact-us-section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    #services-section {
-        padding: 0 !important;
-    }
-    .hero-div {
-        margin-top: 35px !important;
-    }
-
-    #about-section {
-        margin-bottom: 100px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-div {
-        margin-left: 70px !important;
-    }
-
-    .overlay {
-        right: 0;
-        transform: scaleX(0.84);
-    }
-    nav {
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-
-    }
-    
-    .left-side {
-        font-size: 0.9rem;
-    }
-
-    .right-side {
-        font-size: 0.8rem;
-        margin-top: 0;
-    }
-
-
-    .flex {
-        padding: 10px 0 !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        border: 1px solid black;
-        justify-content: space-around;
-    }
-
-    .flex img {
-      width: 200px;
-    }
-
-    .flex ul {
-        font-size: 0.7rem;
-        white-space: nowrap;
-    }
-
-    #contact-us-section h2 {
-        font-size: 1.75rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .sub-contact {
-        display: flex;
-        flex-direction: column;
-    }
-
-    footer {
-       width: fit-content;
-       white-space: nowrap;
-       gap: 100px !important;
-       font-size: 0.875rem !important;
-       border-top: 1px solid rgba(192, 192, 192, 0.2);;
-    }
-
-    footer hr {
-        display: none !important;
-    }
-
-    
-
 }

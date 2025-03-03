@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AE - ICL</title>
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/body.css">
+
 
     <link rel="shortcut icon" href="images/AE-ICL - logo.png" type="image/png">
-
+    <link rel="stylesheet" href="styles/mediaQueries.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/body.css">
+    
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
@@ -25,7 +27,7 @@
     <header class="header">
         <nav>
             <div class="left-side">
-                <span class="company-name" id="company-name">AE- INTERNATIONAL CONSULTING AND LOGISTICS - ICL</span>
+                <span class="company-name-small">AE - ICL</span>
             </div>
             <div class="right-side">
                 <div id="about-page">About</div>
@@ -41,17 +43,13 @@
         <body>
             <section class="main-page">
                 <div class="hero-div section">
-                    <img src="images/AE-ICL - logo.png" alt="company-logo">
-    
-                    <div class="learn-more-div">
+                    <div class="overlay">
+                        <img src="images/AE-ICL - logo.png" alt="company-logo">
+
                         <button class="learn-more">
-                            <span class="what-we-do">What we do</span>
-    
+                            <span id="what-we-do" >What we do</span>
                             <img src="images/arrow-down.png">
                         </button>
-                    </div>
-                    <div class="overlay hero-div">
-                        
                     </div>
                 </div>
             </section>
@@ -82,7 +80,11 @@
                 <div class="horizontal-rule"></div>
                 <hr>
                 <div class="flex">
-                    <img src="images/try3.png" alt="services">
+                    <!--this is for alter images based on the screen size-->
+                    <picture>
+                        <source media="(min-width: 480px)" srcset="images/try3.png"> <!--for big screens-->
+                        <img src="images/try4.png" alt="illustrations of people in a working environment" width="360" height="360"><!--for small screens-->
+                    </picture>
 
                     <ul>
                         <li>Project, Investement and Management Consultancy</li>
@@ -109,18 +111,21 @@
                         </li>
                         <li>0240961515</li>
                     </ul>
+
                     <form>
-                        <input type="text" class="user-name" placeholder="Your Name" required>
+                        <input type="text" class="user-name" placeholder="Your Name" name="name" required>
                         <div>
-                            <input type="email" class="user-email" placeholder="Email Address" required>
-                            <input type="tel" class="user-contact" placeholder="Contact Number" required>
+                            <input type="email" class="user-email" placeholder="Email Address" name="email" required>
+                            <input type="tel" class="user-contact" placeholder="Contact Number" name="contact" required>
                         </div>
-                        <input type="text" class="user-company-name" placeholder="Company Name (optional)">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" class="user-company-name" placeholder="Company Name (optional)" name="company name">
     
-                        <textarea rows="4" cols="50" maxlength="5000" placeholder="Message" required></textarea>
+                        <textarea rows="10" maxlength="5000" placeholder="Message" name="message" required></textarea>
     
                         <input type="submit" value="Send" class="send" required>
                     </form>
+
                 </div>
             </section>
         </body>
@@ -129,10 +134,6 @@
     <hr class="footer-hr">
     
     <footer>
-        <div>
-            <img src="images/AE-ICL - logo.png">
-            <p>AE - ICL</p>
-        </div>
         <p>&copy; 2025 AE - ICL. All Rights Reserved.</p>
     </footer>
 

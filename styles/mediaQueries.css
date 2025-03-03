@@ -1,110 +1,57 @@
-/* Media Queries for Responsiveness */
-@media (min-width: 1690px) {
-    .swiper-wrapper {
-        justify-content:center;
+@media (min-width: 576px) { /*576px or more*/
+    .flex {
+        flex-direction: row !important;
+    }
+
+    .sub-contact {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 30px;
+        margin-top: 1em;
+    }
+
+    form {
+        width: 50%;
     }
 }
 
-@media (max-width: 992px) {
-    nav .left {
-        font-size: 1.25rem;
-    }
-
-    nav .right {
-        font-size: 1rem;
-        margin: 0 0.5rem;
-    }
-
-    .hero-div {
-        width: 18rem;
-        height: 18rem;
-    }
-
-    #projects-section .project-box {
-        flex: 0 0 14rem; /* Adjust width for smaller screens */
-    }
-
-    #skills-section i {
-        font-size: 2.5rem;
+@media (min-width: 768px) {
+    .sub-contact {
+        gap: 3rem;
     }
 }
 
-@media (max-width: 768px) {
-    nav .left a {
-        font-size: 1.25rem;
+/*copy the webstorm webite here*/
+@media (min-width: 1200px) {
+    #contact-us-section {
+        display: flex;
     }
 
-    nav .right a {
-        font-size: 1.1rem;
-        margin: 0 0.375rem;
+    #contact-us-section h2 {
+        font-size: 3rem;
+        font-style: italic;
+        width: 500px;
+        font-family: 'Newsreader Variable';
+        display: inline;
     }
 
-    #about-section .headshot {
-        width: 16rem;
-        height: 16rem;
+    .sub-contact {
+        margin-top: 5rem;
+        flex: 1;
+        gap: 5rem;
     }
 
-    #projects-section .project-box {
-        flex: 0 0 14rem;
+    .flex ul {
+        line-height: 3rem !important;
     }
-
-    #skills-section i {
-        font-size: 2rem;
-    }
-
-    #skills-section .skills-container {
-        gap: 1.25rem;
-     }
 }
 
-@media (max-width: 576px) {
+
+@media (max-width: 345px) {
     nav {
-        padding: 0 1rem;
-    }
-
-    nav .left a {
-        font-size: 1.1rem;
-    }
-
-    nav .right a {
-        font-size: 0.8rem;
-        margin: 0 0.25rem;
-    }
-
-    #about-section .social-links {
-        font-size: 1.75rem;
-    }
-
-    #about-section h2 {
-        font-size: 2.4rem;
-    }
-
-    #about-section .headshot {
-        width: 12rem;
-        height: 12rem;
-    }
-
-    #projects-section .project-box {
-        flex: 0 0 14rem;
-    }
-
-    #skills-section i {
-        font-size: 1.5rem;
-    }
-
-    #skills-section .skills-container {
-       gap: 1rem;
-    }
-
-    section {
-        padding: 6rem 1rem; /* Adjust padding for smaller screens */
-    }
-
-    #projects-section {
-        padding: 6rem 1rem; /* Adjust padding for smaller screens */
-    }
-
-    #leave-message-section {
-        padding: 3rem 1rem; /* Adjust padding for smaller screens */
+        flex-direction: column;
+        justify-content: space-around !important;
+        gap: 0 !important;
+        height: 7vh !important;
     }
 }
