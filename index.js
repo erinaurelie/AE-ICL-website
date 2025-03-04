@@ -7,8 +7,10 @@ window.addEventListener('load', () => {
 // update header text inspired by the picture HTML tag
 function updateCompanyName() {
     const companyNameElem = document.querySelector('.company-name-small');
-    if (window.innerWidth < 350 || window.innerWidth > 730) {
+    if (window.innerWidth < 345|| window.innerWidth >= 720) {
         companyNameElem.textContent = 'AE- INTERNATIONAL CONSULTING AND LOGISTICS - ICL';
+    } else if (window.innerWidth >= 345) {
+        companyNameElem.textContent = 'AE - ICL';
     }
 }
 
