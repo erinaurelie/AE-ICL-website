@@ -1,57 +1,197 @@
-@media (min-width: 576px) { /*576px or more*/
-    .flex {
-        flex-direction: row !important;
+/* small devices (phones): 0-767px */
+
+/* medium devices (tablets): 768px-1023px */
+
+/* large devices (desktops): 1024px and up */
+
+/* @media (orientation: portrait) || @media (orientation: landscape)*/
+/* @media (hover: hover) */
+
+/* min-width: larger than or equal to a certain width. */
+/* max-width: smaller than or equal to a certain width. */
+
+@media (max-width: 1153px) {
+    body, html {
+        margin: auto;
     }
 
-    .sub-contact {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 30px;
-        margin-top: 1em;
-    }
-
-    form {
-        width: 50%;
+    section {
+        
     }
 }
+@media (max-width: 1152px) {
+    body, html {
+        margin: 0;
+        width: auto;
+    }
 
-@media (min-width: 768px) {
-    .sub-contact {
+    .hero-div {
+        padding: 0;
+    }
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text p {
+        margin: 2rem 0;
+    }
+
+    .about-body {
         gap: 3rem;
     }
+
+    article.call-to-action {
+        width: 80%;
+    }
 }
 
-/*copy the webstorm webite here*/
-@media (min-width: 1200px) {
-    #contact-us-section {
+
+@media (max-width: 768px) {
+    #hero {
+        padding: 96px 32px;
+    }
+
+    .hero-div {
+        padding: 0;
+        gap: 10px;
+    }
+
+    .hero-text button {
+        display: inline-block;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    /* about-section */
+    .about-body {
+        gap: 1.1rem;
+    }
+
+    /* services-section */
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* CTA */
+
+    article.call-to-action {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 576px) {
+    /*
+        grid-template-areas creates a grid layout with two disticnt rows first appearing on top of second.
+
+        in my html the style are for desktops/latops so the html was so that the first div appears on top of the sencond but for mobile i wanted the second div to appear on top of the first.
+
+        so i gave them a grid-area property with made the second div to be the first and the first div to be the second. 
+
+        so with grid-template-areas and grid-area you can switch the position of your elements in a grid
+    */
+
+    /* hero-section */
+    #hero {
+        padding: 0;
+    }
+
+    .hero-div {
+        display: grid;
+        grid-template-areas: 
+            "first"
+            "second";
+        grid-template-columns: 1fr; /* Full-width columns */
+        gap: 3rem;
+        min-height: 100vh;
+        padding: 64px 16px;
+
+    }
+
+    .hero-div div:first-child {
+        grid-area: second;
+        text-align: left;
+    }
+
+    .hero-div div:not(:first-child) {
+        grid-area: first;
+    }
+
+    .section-span {
+        width: fit-content;
+    }
+    
+    .hero-div div {
+        max-width: 100%; /* Ensure full width */
+        margin: 0; /* Remove any default margins */
+    }
+
+    .hero-text {
         display: flex;
-    }
-
-    #contact-us-section h2 {
-        font-size: 3rem;
-        font-style: italic;
-        width: 500px;
-        font-family: 'Newsreader Variable';
-        display: inline;
-    }
-
-    .sub-contact {
-        margin-top: 5rem;
-        flex: 1;
-        gap: 5rem;
-    }
-
-    .flex ul {
-        line-height: 3rem !important;
-    }
-}
-
-
-@media (max-width: 345px) {
-    nav {
         flex-direction: column;
-        justify-content: space-around !important;
-        gap: 0 !important;
-        height: 7vh !important;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 0;
     }
+
+    .hero-text h1 {
+        margin: 0 0 24px;
+        font-size: 3.5rem;
+    }
+
+    .hero-text p {
+        margin: 0 0 32px;
+    }
+
+    .hero-text a {
+        width: 100%; /* Make them take up the full width */
+        text-align: center; /* Center the text inside */
+    }
+
+    .hero-text a {
+        padding: 10px 0 !important;
+    }
+    .hero-text .explore {
+        margin: 0;
+    }
+
+
+    /* about-section */
+   .about-body {
+        display: flex;
+        flex-direction: column;
+   }
+
+   /* services-section */
+   .services-grid {
+        grid-template-columns: 1fr;
+   }
+
+   /* CTA */
+   article.call-to-action {
+        width: 90%;
+   }
+
+   /* contact-us section */
+   .contact-grid {
+        grid-template-columns: 1fr;
+   }
+
+   #contact-us {
+        padding: 64px 16px;
+   }
+
+   .form-flex {
+        grid-template-columns: 1fr;
+   }
+
+
+   /* footer */
+   footer {
+        flex-direction: column;
+   }
+
 }
+

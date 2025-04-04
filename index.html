@@ -4,35 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AE - ICL</title>
-
-
-    <link rel="shortcut icon" href="images/AE-ICL - logo.png" type="image/png">
-    <link rel="stylesheet" href="styles/mediaQueries.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/body.css">
-    
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-    (function(){
-        emailjs.init({
-            publicKey: "wsQ33kK0MP40NsbI5",
-        });
-    })();
-    </script>
-
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/mediaQueries.css">
+    <link rel="shortcut icon" href="images/AE-ICL - logo.png" type="image/x-icon">
 </head>
 <body>
     <header class="header">
         <nav>
             <div class="left-side">
-                <span class="company-name-small">AE - ICL</span>
+                <a href="#hero"><span class="company-name"><big>AE-ICL</big></span></a>
             </div>
             <div class="right-side">
-                <div id="about-page">About</div>
-                <div id="services-page">Services</div>
-                <div id="contact-us-page">Contact Us</div>
+                <!--Anchor Linking :: method of creating hyperlinks that take users directly to a specific section or element within a webpage. Anchor (ID) each section is given an ID unique identifier-->
+                <ul>
+                    <li tabindex="0"><a href="#hero">Home</a></li>
+                    <li tabindex="0"><a href="#about">About</a></li>
+                    <li tabindex="0"><a href="#services">Services</a></li>
+                    <li tabindex="0"><a href="#contact-us-us">Contact Us</a></li>
+                </ul>
             </div>
         </nav>
 
@@ -40,119 +34,283 @@
     </header>
 
     <main>
-        <body>
-            <section class="main-page">
-                <div class="hero-div section">
-                    <div class="overlay">
-                        <img src="images/AE-ICL - logo.png" alt="company-logo">
+        <section id="hero">
+            <div class="hero-div">
+                <div class="hero-text">
+                    <span class="section-span">Strategic Business Consulting</span>
+                    <h1>Unlock success <br> with us.</h1>
+                    <p>
+                        Our team of experts combines deep industry knowledge with cutting-edge strategies to drive growth, efficiency, and long-term success. At AE - ICL, your vision is our mission.
+                    </p>
+                    <a href="#contact-us">
+                        Schedule Consultation <img src="images/arrow-right.svg" alt="Arrow Right" width="24px">
+                      </a>                      
+                    <a href="#services" class="explore">Explore Services</a>
+                </div>
+    
+                <div class="overlay">
+                    <img src="images/AE-ICL - logo.png" alt="company-logo">
+                </div>
+            </div>
+        </section>
+    
+        <section id="about">
+            <div class="about-header">
+                <div class="section-span">About Us</div>
+                <h2 class="section-header-h2">Who We Are</h2>
+                <p class="section-header-p">
+                    A team of strategic thinkers dedicated to transforming businesses through innovative consulting solutions.
+                </p>
+            </div>
+    
+            
+            <div class="about-body">
+                <img src="images/about-us-2.jpg" alt="about us">
+    
+                <div>
+                    <h3>Transforming Businesses Since 2013</h3>
+    
+                    <p>Welcome to AE International Consulting and Logistics LTD (AE-ICL), your trusted partner in business excellence and global solutions. Established with a vision to bridge international business gaps, we bring together expertise, innovation, and reliability to serve clients across diverse industries.</p>
+    
+                        <p>With years of experience in international business consulting and logistics, our team of seasoned professionals delivers tailored solutions that drive growth and efficiency. We pride ourselves on our comprehensive approach to business challenges, combining local insight with global perspective.</p>
+    
+                        <h4>Our Mission</h4>
+                        <p>To empower businesses through strategic consulting and seamless logistics solutions, facilitating sustainable growth and international market success.</p>
+    
+                        <h4>Why Choose AE-ICL?</h4>
+                        <ul>
+                            <li><img src="images/check-mark.png">Global Network & Expertise</li>
+                            <li><img src="images/check-mark.png">Customized Solutions</li>
+                            <li><img src="images/check-mark.png">Proven Track Record</li>
+                            <li><img src="images/check-mark.png">End-to-End Service</li>
+                            <li><img src="images/check-mark.png">Innovation-Driven Approach</li>
+                        </ul>
+    
+                        <p>From project management to international trade facilitation, we stand ready to transform your business challenges into opportunities for growth and success.</p>
+                </div>
+            </div>
+        </section>
+    
+    
+        <section id="services">
+            <div class="services-header">
+                <span class="section-span">Our Expertise</span>
+                <h2 class="section-header-h2">Services We Offer</h2>
+                <p class="section-header-p">We offer comprehensive solutions across various industries.</p>
+            </div>
+            <div class="services-grid">
+                <div>
+                    <img src="images/consultancy.png">
+                    <h3>Expert Consultancy</h3>
+                    <p>Offering expertise in project management, investment strategies, and business consultancy to meet your goals.</p>
+                    <!--link the contct us page here-->
+                    <a href="#contact-us">Learn more <img src="images/arrow-right-teal.png"></a>
+                </div>
+    
+                <div>
+                    <img src="images/freight.png">
+                    <h3>Logistics & Freight</h3>
+                    <p>Providing logistics solutions, handling equipment, and freight forwarding services for efficient operations.
+                    </p>
+                    <!--link the contct us page here-->
+                    <a href="#contact-us">Learn more <img src="images/arrow-right-teal.png"></a>
+                </div>
+    
+                <div>
+                    <img src="images/trade.png">
+                    <h3>Trade & Commerce</h3>
+                    <p>Facilitating import/export operations and wholesale services to boost your market presence.
+                    </p>
+                    <!--link the contact us class section here-->
+                    <a href="#contact-us">Learn more <img src="images/arrow-right-teal.png"></a>
+                </div>
+    
+                <div>
+                    <img src="images/advocacy.png">
+                    <h3>Advocacy & Lobbying</h3>
+                    <p>Advocating and facilitating your interests in relevant sectors to achieve meaningful outcomes.
+                    </p>
+                    <!--link the contct us page here-->
+                    <a href="#contact-us">Learn more <img src="images/arrow-right-teal.png"></a>
+                </div>
+    
+                <div>
+                    <img src="images/real-estate.png">
+                    <h3>Real Estate & Construction</h3>
+                    <p>Delivering services in property development, construction, and real estate management.
+                    </p>
+                    <!--link the contct us page here-->
+                    <a href="#contact-us">Learn more <img src="images/arrow-right-teal.png"></a>
+                </div>
+    
+                <div>
+                    <img src="images/industrial.png">
+                    <h3>Industrial Growth</h3>
+                    <p>Accelerating industrialization and commercialization of products for sustainable business development.
+                    </p>
+                    <!--link the contct us page here-->
+                    <a href="#contact-us">Learn more <img src="images/arrow-right-teal.png"></a>
+                </div>
+    
+                <div>
+                    <img src="images/expansion.png">
+                    <h3>Marketplace Expansion</h3>
+                    <p>Identify and capitalize on new market opportunities to grow your business reach.
+                    </p>
+                    <!--link the contct us page here-->
+                    <a href="#contact-us">Learn more <img src="images/arrow-right-teal.png"></a>
+                </div>
+    
+                <div>
+                    <img src="images/analytics.png">
+                    <h3>Strategic Planning</h3>
+                    <p>Develop comprehensive strategies that align with your business goals and market conditions.
+                    </p>
+                    <!--link the contct us page here-->
+                    <a href="#contact-us">Learn more <img src="images/arrow-right-teal.png"></a>
+                </div>
+    
+                <div>
+                    <img src="images/performance.png">
+                    <h3>Performance Optimization</h3>
+                    <p>Streamline operations and improve efficiencies to maximize business performance.
+                    </p>
+                    <!--link the contct us page here-->
+                    <a href="#contact-us">Learn more <img src="images/arrow-right-teal.png"></a>
+                </div>
+            </div>
+    
+            <article class="call-to-action">
+                <h3>Ready to Transform Your Business?</h3>
+                <p>Our team of experts is ready to help you navigate challenges and seize new opportunities for growth.</p>
+                <a href="#contact-us">Schedule a Consultation</a>
+            </article>
+        </section>
+    
+        <section id="contact-us">
+            <div class="contact-header">
+                <span class="section-span">Get in Touch</span>
+                <h2 class="section-header-h2">Contact Us</h2>
+                <p class="section-header-p">Ready to transform your business? Reach out to schedule a consultation with AE -ICL</p>
+            </div>
+    
+            <div class="contact-grid">
+                <div class="send-message">
+                    <h3>Send Us a Message</h3>
+                    <!--a button inside a form automatically submits even without type but best practice to include it-->
+                    <!--we don't have a server and will be using Email JS so hence why i dont have action, method, name and name attrubutes used-->
 
-                        <button class="learn-more">
-                            <span id="what-we-do" >What we do</span>
-                            <img src="images/arrow-down.png">
-                        </button>
+                    <div>
+                        <p>Required fields are marked with an asterisk (*)</p>
+                        <form>
+                            <div class="form-flex">
+                                <div>
+                                    <label for="name">Name *</label>
+                                    <input id="name" type="text" placeholder="Jane Doe" name="name" maxlength="255" required>
+                                </div>
+            
+                            <div>
+                                    <label for="email">Email Address *</label>
+                                    <input id="email" type="email" placeholder="jane@example.com" name="email" maxlength="255" required>
+                            </div>
+            
+                            <div>
+                                    <label for="number">Phone Number</label>
+                                    <input id="number" type="tel" placeholder="+233 24 123 4567" name="phone-number" max="255">
+                                </div>
+            
+                                <div>
+                                    <label for="company-name">Company Name</label>
+                                    <input id="company-name" type="text" name="company-name" placeholder="Your Company">
+                                </div>
+                            </div>
+                            
+                            <div class="text-area">
+                                <label for="message">Your Message *</label>
+                                <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." cols="30" rows="5" required></textarea>
+                            </div>
+        
+                            <button type="submit">Submit </button>
+        
+                        </form>
                     </div>
                 </div>
-            </section>
-
-            <section id="about-section" class="section group">
-                <p>Welcome to AE International Consulting and Logistics (AE-ICL), your trusted partner in business excellence and global solutions. Established with a vision to bridge international business gaps, we bring together expertise, innovation, and reliability to serve clients across diverse industries.</p>
-
-                <p>With years of experience in international business consulting and logistics, our team of seasoned professionals delivers tailored solutions that drive growth and efficiency. We pride ourselves on our comprehensive approach to business challenges, combining local insight with global perspective.</p>
-
-                <h3>Our Mission</h3>
-                <p>To empower businesses through strategic consulting and seamless logistics solutions, facilitating sustainable growth and international market success.</p>
-
-                <h3>Why Choose AE-ICL?</h3>
-                <ul>
-                    <li>Global Network & Expertise</li>
-                    <li>Customized Solutions</li>
-                    <li>Proven Track Record</li>
-                    <li>End-to-End Service</li>
-                    <li>Innovation-Driven Approach</li>
-                </ul>
-
-                <p>From project management to international trade facilitation, we stand ready to transform your business challenges into opportunities for growth and success.</p>
-            </section>
-
-
-            <section id="services-section" class="section group">
-                <h2>ICL Areas of Professionalism</h2>
-                <div class="horizontal-rule"></div>
-                <hr>
-                <div class="flex">
-                    <!--this is for alter images based on the screen size-->
-                    <picture>
-                        <source media="(min-width: 480px)" srcset="images/try3.png"> <!--for big screens-->
-                        <img src="images/try4.png" alt="illustrations of people in a working environment" width="360" height="360"><!--for small screens-->
-                    </picture>
-
-                    <ul>
-                        <li>Project, Investement and Management Consultancy</li>
-                        <li>Logistics, Handling Equipement and Frieght Forwarding</li>
-                        <li>Importers/Exporters and Wholesalers</li>
-                        <li>Lobbying</li>
-                        <li>Real Estates and Construction</li>
-                        <li>Industralization and Commercialization</li>
-                        <li>Marketplace Facilitation and Trade Services</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="contact-us-section" class="section group">
-                <h2>Tell us about your next project</h2>
-
-                <div class="sub-contact">
-                    <ul>
-                        <li>11 K.  Asente Avenue, 48</li>
-                        <li>P.O Box CT 9941, Accra</li>
-                        <li>
-                            <a href="mailto:inconsult_2013logistics@yahoo.fr
-                        ">inconsult_2013logistics@yahoo.fr</a>
-                        </li>
-                        <li>0240961515</li>
-                    </ul>
-
-                    <form>
-                        <input type="text" class="user-name" placeholder="Your Name" name="name" required>
+    
+                <div class="get-in-touch">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions or need more information? Reach out to our team through any of the channels below or visit our office.</p>
+    
+                    <a href="tel:+233240961515">
+                        <img src="images/call-us.png" alt="call us">
                         <div>
-                            <input type="email" class="user-email" placeholder="Email Address" name="email" required>
-                            <input type="tel" class="user-contact" placeholder="Contact Number" name="contact" required>
+                            <h4>Call Us</h4>
+                            <p>+233 24 096 1515</p>
                         </div>
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="text" class="user-company-name" placeholder="Company Name (optional)" name="company name">
+                    </a>
+                    
+                    <a href="mailto:inconsult_2013logistics@yahoo.fr">
+                        <img src="images/email-us.png" alt="email us">
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>inconsult_2013logistics@yahoo.fr</p>
+                        </div>
+                    </a>
     
-                        <textarea rows="10" maxlength="5000" placeholder="Message" name="message" required></textarea>
+                    <a href="https://www.google.com/maps/search/?api=1&query=5.658526651%2C-0.211770198" target="_blank">
+                        <img src="images/visit-us.png" alt="visit us">
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>Second St.K. Asante Ave, Accra, Greater Accra Region, CT 9941</p>
+                        </div>
+                    </a>
     
-                        <input type="submit" value="Send" class="send" required>
-                    </form>
-
+    
+                    <div class="office-hours">
+                        <h3>Office Hours</h3>
+                        <div>
+                            <span class="day-of-week">Monday - Friday:</span>
+                            <span>9:00 AM - 6:00 PM</span>
+                        </div>
+    
+                        <div>
+                            <span class="day-of-week">Saturday:</span>
+                            <span>10:00 AM - 2:00 PM</span>
+                        </div>
+    
+                        <div>
+                            <span class="day-of-week">Sunday:</span>
+                            <span>Closed</span>
+                        </div>
+                    </div>
                 </div>
-            </section>
-        </body>
+            </div>
+        </section>
     </main>
 
-    <hr class="footer-hr">
-    
     <footer>
-        <p>&copy; 2025 AE - ICL. All Rights Reserved.</p>
+        <p>&copy; 2025 AE-International Consulting &amp; Logistics LTD. All rights reserved.</p>
+        <div>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
     </footer>
-
-    <script src="index.js"></script>
 </body>
 </html>
 
+<!--insert this after email sent-->
+
+<!-- <div class="thank-you">
+    <img src="images/check-mark-t.png">
+    <h4>Thank You!</h4>
+    <p>Your message has been sent succesfully. We'll get to you shortly</p>
+    <button>Send Another Message</button>
+</div> -->
+
 
 <!--
-For a turquoise background (#40E0D0), you'll want to select a font color that provides good contrast and readability. Here are some font color suggestions:
+    responsive css (cries in developer)
 
-Dark Blue (#0E2433): This provides a strong contrast and pairs well with turquoise.
+    disable the inputs so  user  cannot  change anything while its sending...
 
-White (#FFFFFF): Classic and clean, ensuring the text stands out.
-
-Navy Blue (#000080): Another darker blue that contrasts nicely.
-
-Black (#000000): Timeless and highly readable.
-
-Dark Gray (#333333): A softer alternative to black that still offers good contrast.
-
+    handle validation with JS change border to red then add a text below it like Password can't be blank
 -->

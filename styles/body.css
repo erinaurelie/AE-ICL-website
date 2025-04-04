@@ -1,55 +1,105 @@
-*{
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --font-color: #61828A;
 }
 
-html{
-    overflow-x: hidden;
+body, html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    color-scheme: black;
 }
-
-
 
 body {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
     background-color: #0E2433;
     color: #E1E1E0;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-    margin: auto;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Roboto", sans-serif;
+    min-height: 100%;
 }
 
-/* main-page */
+.company-name {
+    letter-spacing: -1px;
+}
+
+section {
+    padding: 96px 36px;
+}
+
+#hero {
+    padding: 2px 36px 96px;
+}
+
+
+/* hero-section */
+.hero-text h1 {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: -2px;
+    line-height: 1;
+    font-size: 5rem;
+}
+
+.hero-text p {
+    color: var(--font-color);
+    font-size: 1.1rem;
+    margin: 32px 0;
+}
+
+.hero-text a img {
+    width: auto; /* Prevent the image from stretching */
+    height: auto; /* Maintain the image's aspect ratio */
+    max-width: 24px; 
+}
+
 .hero-div {
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10rem;
+    place-items: center;
+    padding: 0 3em 0;
 }
+
+.hero-text a:not(.explore) { 
+    background-color: white;
+    border: none;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+.hero-text .explore {
+    padding: 10px 20px;
+    border: 2px solid white;
+    background: transparent;
+    margin-left: 15px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
+    transition-duration: 0.5s;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.hero-text button:hover {
+    background-color: white;
+    color: black;
+}
+
 
 .hero-div img {
     max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
-.learn-more {
-    border: 0.5px solid #4b4b4a;
-    padding: 0.9rem 2rem;
-    white-space: nowrap;
-    background-color: transparent;
-    color: #E1E1E0;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: border-color 0.5ms;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /*centers it perfectly*/
-    z-index: 20;
-}
 
 .learn-more:hover {
     border-color: white;
@@ -62,207 +112,352 @@ body {
     background-color: rgba(0, 0, 0, 0.33);
     border-radius: 50%;
     margin: auto;
-}
 
-/* services section */
-hr {
-    margin: 0;
-    width: 150px;
-    margin: auto;
-    border: 2px solid silver;
+    animation: bounce 2s infinite ease-in-out; /* Apply animation to the image */
+    /* color horizontal offset vertical offset blur radius spread radius */
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 4px 8px 3px; 
 }
 
 
-#services-section h2 {
-    text-align: center;
-    margin-bottom: 5px;
+/* Define the keyframes for the bounce effect */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at the same position */
+    }
+    50% {
+        transform: translateY(-30px); /* Slightly move upwards */
+    }
 }
-#services-section {
-    padding: 2rem;
+
+.right-side ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.right-side a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*about-section*/
+.about-body > img {
+    width: 500px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 4px 8px 5px;
+}
+
+.about-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3rem;
+    align-items: center;
+    line-height: 1.4;
+}
+
+.about-body h3 {
+    font-size: 1.5rem;
+}
+
+.about-body p,
+.about-body li {
+    color: #7E8C9C;
+}
+
+.about-body ul {
+    list-style: none;
+}
+
+.about-body ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    gap: 5px;
+}
+
+/*services section*/
+#services {
+    padding: 6rem 2rem;
     margin-top: 2rem;
 }
 
-.flex {
+.about-header,
+.services-header,
+.contact-header {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-bottom: 64px;
+}
+
+
+.section-span {
+    background-color: rgba(46, 196, 182, 0.1);
+    color: #2ec4b6;
+    padding: 5px 20px;
+    border-radius: 9999px; /*quick way to form completely rounded corners*/
+    font-weight: bold;
+}
+
+.section-header-h2{
+    font-size: 2.5rem;
+    margin-bottom: 0;
     margin-top: 1rem;
 }
 
-.flex img {
-    max-width: 70%;
-    height: auto;
+.section-header-p {
+    font-size: 1.2rem;
+    color: var(--font-color);
+    margin-top: 3px;
 }
 
-.flex ul {
-    line-height: 2rem;
-    font-size: clamp(1rem, 2vw, 1.2rem);
+.services-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.services-grid div,
+.services-grid article {
+    /* box-shadow: [color] [offset-x] [offset-y] [blur-radius] [spread-radius]; */
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 4px 8px 0px;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.services-grid p {
+    color: grey;
+}
+
+.services-grid h3 {
+    font-size: 1.3rem;
+}
+
+.services-grid a {
+    color: #2EC4B6;
+    text-decoration: none;
+    display: inline-flex; /* align inline elements without making them behave as block with this use all the flex properties */
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* call to action */
+.call-to-action {
+    margin: 5rem auto; /*Without a width, the element takes up the full width of its parent container, leaving no room for centering.*/
+    width: 50%;
+    border: 2px solid; /*border width needs to be solid*/
+    /* Simulate gradient border with background */
+    background: linear-gradient(white, teal);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 10px 60px 30px;
+}
+
+.call-to-action h3 {
+    font-size: 1.8rem;
+    color: black;
+}
+
+.call-to-action p {
+    color: rgb(75 85 99);
+    margin-top: 0;
+}
+
+.call-to-action a {
+    padding: 12px 20px;
+    background-color: white;
+    border: none;
+    color: black;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    display: inline-block; /*a tags are inline so to apply margin you need to change it*/
+    margin-top: 0.7rem;
 }
 
 
-/* contact us section*/
+/*contact us*/
 
-.sub-contact {
-    display: flex;
-    flex-direction: column;
-}
 
-.sub-contact ul {
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 5rem;
+    column-gap: 3rem;
 }
 
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+    gap: 2rem;
 }
 
-form div {
+
+.send-message {
+    padding: 2rem;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 4px 8px 0px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    
+}
+
+
+.send-message p {
+    font-style: italic;
+}
+
+.contact-grid h3 {
+    font-size: 1.5rem;
+}
+
+.form-flex {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 1fr;
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
 
-form input {
-    border-style: none none solid;
-    border-width: 1px;
-    background-color: #0000;
-    margin-bottom: 0 !important;
+.form-flex div,
+.text-area { /*label on top of input box*/
+    display: flex;
+    flex-direction: column;
+}
+
+.form-flex label,
+.text-area label {
+    margin-bottom: 5px;
+}
+
+.form-flex input,
+form textarea {
+    padding: 1rem 1.5rem;
+    appearance: auto;
+    border-radius: 0.7rem;
+    background: transparent;
     outline: none;
-    font-size: 1.1rem;
     color: white;
-    font-family: 'Inter Variable';
-    padding: 10px;
+    font-size: 1rem;
+    transition: border-color .5s;
+    border: 1px solid var(--font-color);
 }
 
-form input::placeholder,
-form textarea::placeholder {
-    font-size: 1rem;
+
+form input:focus,
+form textarea:focus {
+    border: 2px solid teal;
 }
+
 
 form textarea {
-    background-color: #0000;
-    outline: none;
-    font-size: 1.1rem;
-    box-sizing: border-box;
-    color: white;
-    font-family: 'Inter Variable';
     min-height: 150px;
-    padding: 18px 18px 0; /* top bottom horizontal*/
     resize: vertical;
+    font-family: 'Inter', sans-serif;
 }
 
-input[type="submit"] {
-    border: 1px solid gray;
-    padding: 10px 50px;
-    margin: auto;
+button[type="submit"] {
+    /*continue styling the button*/
+    border: none;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 15px;
+    background-color: rgb(75 85 99);
+    color: white;
+    transition: transform 0.5s;
+}
+
+button[type="submit"]:hover {
+    transform: scaleY(1.1);
+}
+
+
+/*get in touch*/
+.get-in-touch > p { /*direct descendants*/
+    color: var(--font-color);
+}
+
+
+.get-in-touch a {
+    margin-top: 24px;
+    border-radius: 15px;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 4px 8px 0px;
+    display: flex;
+    align-items: flex-start;
+    column-gap: 1rem;
+    align-items: center;
+    text-decoration: none;
+    padding: 1rem;
+    line-height: 24px;
     cursor: pointer;
 }
 
-input[type="submit"]:active {
-    transform: scale(0.8);
+.get-in-touch a p,
+.get-in-touch h4 {
+    margin: 0;
 }
 
-
-input[type="submit"]:hover,
-form input:focus,
-form textarea:focus {
-    border-color: white;
-} 
-
-section {
-    scroll-margin-bottom: 50rem;
+.get-in-touch h4 {
+    color: white;
 }
 
+.get-in-touch a p {
+    color: #A9A9A9;
+}
 
+/* office-hours */
+.office-hours {
+    padding: 2rem;
+    margin-top: 1.5rem;
+    box-shadow: rgba(255, 255, 255, 0.3) 0px 4px 8px 0px;
+    border-radius: 15px;
+}
 
-
-
-.main-page {
-    height: 100vh;
+.office-hours div {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
 }
 
-h2 {
-    font-size: clamp(2rem, 2.5vw, 3rem);
-    color: #40E0D0;
-
+.office-hours div .day-of-week {
+    color: #87CEEB;
 }
 
-#contact-us-section h2 {
+.office-hours div span:not(.day-of-week) { /*excludes all spans with the class .day-of-the-week*/
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+/*thank you message*/
+.thank-you {
     text-align: center;
-    position: relative;
-    font-weight: 600;
-    letter-spacing: 1px;
 }
 
-
-/* about section */
-
-#about-section p {
-    line-height: 1.2rem;
-    margin-bottom: 1.5rem;
-    font-size: clamp(0.938rem, 0.521rem + 1.389vw, 1.2rem);
+.thank-you img {
+    border-radius: 50%;
 }
 
-#about-section {
-    /* width: 90%;
-    margin: 0 auto; */
-    padding: 0 2rem 2rem;  
-    margin: 0 0 2rem;
+.thank-you h4 {
+    font-size: 1.3rem;
 }
 
-#about-section h3 {
-    color: #40E0D0;
-    margin: 2rem 0 1rem 0;
+.thank-you p {
+    color: var(--font-color);
 }
 
-#about-section ul {
-    list-style: none;
-    padding-left: 0;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-}
-
-#about-section ul li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-#about-section ul li:before {
-    content: "•";
-    color: #40E0D0;
-    position: absolute;
-    left: 0;
-}
-
-
-.footer-hr {
-    width: 97%;
-    border: 1px solid rgba(192, 192, 192, 0.2);
-    margin-top: 5px;
-}
-
-.extra-info {
-    border: 1px solid rgba(192, 192, 192, 0.2);
-    width: fit-content;
-}
-
-
-.sub-contact {
-    display: flex;
-    line-height: 40px;
-}
-
-footer p {
-    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-    padding: 10px;
-    text-align: center;
+.thank-you button {
+    padding: 12px 24px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    background: transparent;
+    font-size: 1rem;
+    color: whitesmoke;
 }

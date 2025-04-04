@@ -6,9 +6,9 @@ window.addEventListener('load', () => {
 });
 // update header text inspired by the picture HTML tag
 function updateCompanyName() {
-    const companyNameElem = document.querySelector('.company-name-small');
+    const companyNameElem = document.querySelector('.company-name');
     if (window.innerWidth < 345|| window.innerWidth >= 720) {
-        companyNameElem.textContent = 'AE- INTERNATIONAL CONSULTING AND LOGISTICS - ICL';
+        companyNameElem.textContent = 'AE- Internation Consulting and Logistic - ICL';
     } else if (window.innerWidth >= 345) {
         companyNameElem.textContent = 'AE - ICL';
     }
@@ -21,7 +21,7 @@ updateCompanyName(); // Call the function on page load
 
 // scroll between pages
 const pages = [{
-    button: '#about-page',
+    button: '#about-section',
     targetPage: '#about-section'
 }, {
     button: '#services-page',
@@ -30,11 +30,11 @@ const pages = [{
     button: '#contact-us-page',
     targetPage: '#contact-us-section'
 }, {
-    button: '#what-we-do',
-    targetPage: '#about-section'
-}, {
     button: '.company-name-small' ?  '.company-name-small': '#company-name',
     targetPage: '.main-page'
+}, {
+    button: '.what-we-do',
+    targetPage: '#about-section'
 }];
 
 function scrollToDiv(target) {
@@ -46,21 +46,17 @@ function scrollToDiv(target) {
       top: offsetTop - paddingTop - 100, // the constant is additional padding top
       behavior: 'smooth'
     });
-  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     pages.forEach(page => {
-    document.querySelector(page.button)
-        .addEventListener('click', () => {
-            if (page.button === '.what-we-do') {
-                alert('What we do clicked');
-                console.log('what we do');
-                
-            }
-            scrollToDiv(page.targetPage);
-        });
+        document.querySelector(page.button)
+            .addEventListener('click', () => {
+                scrollToDiv(page.targetPage);
+            });
     });
 });
+
 
 // Form Submit
 const userName = document.querySelector('.user-name');
@@ -68,8 +64,8 @@ const userEmail = document.querySelector('input[type="email"]');
 const tel = document.querySelector('input[type="tel"]');
 const companyName = document.querySelector('.user-company-name');
 const message = document.querySelector('textarea');
-
 const submitBtn = document.querySelector('input[type="submit"]');
+
 
 
 function sendMail() {
@@ -79,10 +75,19 @@ function sendMail() {
         tel: tel.value,
         companyName: companyName.value,
         message: message.value,
-        to_email: userEmail.value
+        to_email: userEmail.value,
     }
     submitBtn.value = 'Sending...';
-    console.log(userData);
+
+    // Create a function to convert file to base64
+    const getBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = (error) => reject(error);
+        });
+    };
 
     // initiating EmailJS :: meaning sending the data to EmailJS and it will send it back to your email
     emailjs.send(
@@ -91,11 +96,15 @@ function sendMail() {
         console.log(`Success ${response.status} ${response.text}`);
 
         submitBtn.value = 'Sent!';
+        submitBtn.style.cursor = 'no-drop';
 
         setTimeout(() => {
             submitBtn.value = 'Send';
-        }, 5000);
+            submitBtn.style.cursor = 'pointer';
+        }, 300000);
 
+        // Clear Fields
+        clearFields(userName, userEmail, tel, companyName, message);
 
         return emailjs.send("service_zwo2d8j", "template_cqi5hj5", {
             to_name: userData.name,
@@ -106,12 +115,6 @@ function sendMail() {
     }).catch(error => {
         console.log(`Failed ${error}`);
     });
-
-    
-
-    
-    // Clear Fields
-    clearFields(userName, userEmail, tel, companyName, message);
 }
 
 
@@ -120,16 +123,16 @@ submitBtn.addEventListener('click', event => {
     sendMail();
 });
 
+
 submitBtn.disable = true;
 setTimeout(() => {
     submitBtn.disable = false;
     console.log('you can submit again now');
 }, 20000);
 
+
 function clearFields(...fields) {
     fields.forEach(field => {
         field.value = '';
     });
 }
-
-
