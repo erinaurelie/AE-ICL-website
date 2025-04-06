@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+/* #61828A */
 :root {
-    --font-color: #61828A;
+    --font-color: #61828A; 
 }
+
 
 body, html {
     scroll-behavior: smooth; /* Enables smooth scrolling */
     color-scheme: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
@@ -14,7 +20,13 @@ body {
     color: #E1E1E0;
     font-family: "Roboto", sans-serif;
     min-height: 100%;
+    border: 2px solid rebeccapurple;
 }
+
+/* body main {
+    padding: 96px 32px;
+} */
+
 
 .company-name {
     letter-spacing: -1px;
@@ -24,9 +36,6 @@ section {
     padding: 96px 36px;
 }
 
-#hero {
-    padding: 2px 36px 96px;
-}
 
 
 /* hero-section */
@@ -35,6 +44,7 @@ section {
     letter-spacing: -2px;
     line-height: 1;
     font-size: 5rem;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* vertical & horizontal offset, blur radius and color*/
 }
 
 .hero-text p {
@@ -50,55 +60,47 @@ section {
 }
 
 .hero-div {
-    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 10rem;
+    margin-top: 7rem;
     place-items: center;
-    padding: 0 3em 0;
+    /* padding: 0 3em 0; */
+}
+
+.hero-text div {
+    display: flex;
+    gap: 8px;
+}
+
+.hero-text div a {
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 500;
 }
 
 .hero-text a:not(.explore) { 
     background-color: white;
     border: none;
-    padding: 10px 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-weight: 400;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 1rem;
     color: black;
-    text-decoration: none;
 }
 
 .hero-text .explore {
-    padding: 10px 20px;
     border: 2px solid white;
     background: transparent;
-    margin-left: 15px;
     color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: 500;
     transition-duration: 0.5s;
-    font-size: 1rem;
-    text-decoration: none;
 }
 
-.hero-text button:hover {
+.hero-text div a:nth-of-type(2):hover {
     background-color: white;
     color: black;
 }
 
-
-.hero-div img {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-}
 
 
 .learn-more:hover {
@@ -118,7 +120,9 @@ section {
     box-shadow: rgba(255, 255, 255, 0.3) 0px 4px 8px 3px; 
 }
 
-
+.overlay img {
+    max-width: 430px;
+}
 /* Define the keyframes for the bounce effect */
 @keyframes bounce {
     0%, 100% {
@@ -143,7 +147,7 @@ section {
 
 /*about-section*/
 .about-body > img {
-    width: 500px;
+    max-width: 500px;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 1rem;
@@ -160,6 +164,16 @@ section {
 
 .about-body h3 {
     font-size: 1.5rem;
+}
+
+.about-body h4, 
+summary {
+    font-size: 1.2rem;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .about-body p,
@@ -254,8 +268,10 @@ section {
     margin: 5rem auto; /*Without a width, the element takes up the full width of its parent container, leaving no room for centering.*/
     width: 50%;
     border: 2px solid; /*border width needs to be solid*/
-    /* Simulate gradient border with background */
+
     background: linear-gradient(white, teal);
+
+    /* background: conic-gradient(navy, teal, navy, teal); */
     padding: 3rem 2rem;
     text-align: center;
     border-radius: 10px 60px 30px;
@@ -290,9 +306,9 @@ section {
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 5rem;
-    column-gap: 3rem;
+    gap: 3rem;
 }
+
 
 
 form {
@@ -307,7 +323,11 @@ form {
     box-shadow: rgba(255, 255, 255, 0.3) 0px 4px 8px 0px;
     border-radius: 15px;
     box-sizing: border-box;
-    
+}
+
+.send-message * {
+    width: 100%; /* Inputs scale with the form */
+    box-sizing: border-box;
 }
 
 
@@ -321,7 +341,7 @@ form {
 
 .form-flex {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 1.5rem;
 }
 
@@ -346,13 +366,13 @@ form textarea {
     color: white;
     font-size: 1rem;
     transition: border-color .5s;
-    border: 1px solid var(--font-color);
+    border: 1px solid #0077B6;
 }
 
 
 form input:focus,
 form textarea:focus {
-    border: 2px solid teal;
+    border-width: 2px;
 }
 
 
@@ -398,6 +418,10 @@ button[type="submit"]:hover {
     padding: 1rem;
     line-height: 24px;
     cursor: pointer;
+    box-sizing: border-box;
+    word-break: break-word; /* Breaks words when needed */
+    overflow-wrap: break-word; /* Ensures wrapping for long words */
+
 }
 
 .get-in-touch a p,
@@ -460,4 +484,9 @@ button[type="submit"]:hover {
     background: transparent;
     font-size: 1rem;
     color: whitesmoke;
+}
+
+
+footer {
+    margin-top: 20px;
 }
