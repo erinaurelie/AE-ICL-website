@@ -36,7 +36,8 @@ footer {
     text-align: center;
 }
 
-section > a {
+section > a:link,  
+section > a:visited {
     border-width: 1px;
     border-color: transparent;
     background-color: transparent;
@@ -51,7 +52,8 @@ section > a {
     transition: background-color 0.25s;
 }
 
-section > a:hover {
+section > a:hover,
+section > a:active {
     background-color: rgba(128, 128, 128, .8);
 }
 

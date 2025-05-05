@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AE - ICL</title>
+
+    <!-- fonts from google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- style sheets -->
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/body.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/mediaQueries.css">
     <link rel="shortcut icon" href="images/AE-ICL - logo.png" type="image/x-icon">
+
+    <!-- EmailJS init -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "wsQ33kK0MP40NsbI5",
+            });
+        })();
+    </script>
 </head>
 <body>
     <header class="header">
@@ -219,14 +235,14 @@
                             </div>
             
                             <div>
-                                    <label for="number">Phone Number</label>
-                                    <input id="number" type="tel" placeholder="+233 24 123 4567" name="phone-number" max="255">
-                                </div>
-            
-                                <div>
-                                    <label for="company-name">Company Name</label>
-                                    <input id="company-name" type="text" name="company-name" placeholder="Your Company">
-                                </div>
+                                <label for="number">Phone Number</label>
+                                <input id="number" type="tel" placeholder="+233 24 123 4567" name="phone-number" max="255">
+                            </div>
+        
+                            <div>
+                                <label for="company-name">Company Name</label>
+                                <input id="company-name" type="text" name="company-name" placeholder="Your Company">
+                            </div>
                             </div>
                             
                             <div class="text-area">
@@ -234,7 +250,7 @@
                                 <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." cols="30" rows="5" required></textarea>
                             </div>
         
-                            <button type="submit">Submit </button>
+                            <button type="submit">Send Message</button>
         
                         </form>
                     </div>
@@ -298,6 +314,8 @@
             <a href="privacy-policy.html">Privacy Policy</a>
         </div>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
 
