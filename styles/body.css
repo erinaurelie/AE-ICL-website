@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 /* #61828A */
 :root {
     --font-color: #61828A; 
@@ -36,6 +40,7 @@ section {
     line-height: 1;
     font-size: clamp(2.5rem, 5vw, 5rem);
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); /* vertical & horizontal offset, blur radius and color*/
+    margin-top: 15px;
 }
 
 .hero-text p {
@@ -110,8 +115,11 @@ section {
 }
 
 .overlay img {
-    max-width: 430px;
+    /**/
+    max-width: 30rem; 
+    width: 100%; /* inline elements do not naturally expand to fill the width of their container so by setting width to 100% we ensure they do take up the full width available, allowing max-width to limit thier size. but block elements have default width 100%*/
 }
+
 /* Define the keyframes for the bounce effect */
 @keyframes bounce {
     0%, 100% {
@@ -135,7 +143,9 @@ section {
 
 /*about-section*/
 .about-body > img {
-    max-width: 500px;
+    /*the width makes sure it fills the page horizontally always and the max-width ensures that it does not get bigger thann our preference theey are both needed for a responsive design. width 100% is only for inline elelements block elements have them by default*/
+    max-width: 30rem;
+    width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 1rem;
@@ -184,11 +194,19 @@ summary {
 @media (max-width: 768px) {
     .about-body {
         grid-template-columns: 1fr;
+    }
+
+   
+    .about-body h3 {
         text-align: center;
     }
 
-    .about-body > img {
-        max-width: 100%;
+    .explore {
+        text-align: center;
+    }
+
+    .hero-text div {
+        flex-direction: column;
     }
 }
 
@@ -271,7 +289,6 @@ summary {
 /* call to action */
 .call-to-action {
     margin: 5rem auto;
-    width: 90%;
     max-width: 800px;
     border: 2px solid;
     background: linear-gradient(white, teal);
@@ -522,4 +539,47 @@ button[type="submit"]:hover {
 
 footer {
     margin-top: 20px;
+}
+
+
+/* the hambruger menu */
+
+.right-side button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 200px;
+    border-radius: 20px;
+    justify-content: space-between;
+    cursor: pointer;
+    border: 1px solid;
+    padding: 1rem 2rem;
+
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1000;
+    visibility: hidden;
+}
+
+#menu a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#menu img {
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+#menu div:nth-of-type(1) {
+    display: inline-flex;
+    justify-content: flex-end;
 }

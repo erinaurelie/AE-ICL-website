@@ -98,3 +98,15 @@ function clearFields(...fields) {
         field.value = '';
     });
 }
+
+
+document.getElementById('hamburger')
+    .addEventListener('click', () => {
+        const menu = document.getElementById('menu');
+        menu.style.visibility = 'visible';
+
+        document.getElementById('exit-menu')
+            .addEventListener('click', () => {
+                menu.style.visibility = 'hidden';
+            });
+    });

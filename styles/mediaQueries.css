@@ -31,10 +31,6 @@
     .about-body {
         gap: 3rem;
     }
-
-    article.call-to-action {
-        width: 80%;
-    }
 }
 
 
@@ -67,9 +63,6 @@
         gap: 1.1rem;
     }
 
-    .about-body > img {
-        max-width: 400px;
-    }
 
     /* services-section */
     .services-grid {
@@ -77,11 +70,6 @@
     }
 
     /* CTA */
-
-    article.call-to-action {
-        width: 80%;
-    }
-
 
     .contact-grid {
         gap: 1.5rem;
@@ -96,7 +84,7 @@
         display: none;
     }
 
-    .right-side img {
+    .right-side button {
         display: block !important;
     }
     
@@ -183,7 +171,6 @@
 
     .hero-text a {
         width: 100%; /* Make them take up the full width */
-        text-align: center; /* Center the text inside */
     }
 
     .hero-text a {
@@ -212,9 +199,6 @@
         flex-direction: column;
    }
 
-   .about-body img {
-        width: 90%;
-   }
 
    /* services-section */
    .services-grid {
@@ -251,11 +235,14 @@
 
    .contact-grid input,
    .contact-grid textarea{
-    width: 100%; /* Input adapts to container width */
-    max-width: 500px; /* Optional: prevents oversized inputs */
-    box-sizing: border-box; /* Includes padding and borders in width */
-}
-  
+        width: 100%; /* Input adapts to container width */
+        max-width: 500px; /* Optional: prevents oversized inputs */
+        box-sizing: border-box; /* Includes padding and borders in width */
+    }
+    
+    footer p {
+        font-size: 13px;
+    }
   
 }
 

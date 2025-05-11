@@ -23,7 +23,7 @@ nav .company-name-small {
 }
 
 
-nav {
+nav:first-of-type {
     position: sticky;
     inset: 0;
     display: flex;
