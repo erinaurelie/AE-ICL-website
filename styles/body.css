@@ -85,6 +85,10 @@ section {
     color: black;
 }
 
+.hero-text a {
+    white-space: nowrap;
+}
+
 .hero-text .explore {
     border: 2px solid white;
     background: transparent;
@@ -104,7 +108,6 @@ section {
 .overlay {
     position: relative;
     width: fit-content;
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.33);
     border-radius: 50%;
     margin: auto;
@@ -118,6 +121,7 @@ section {
     /**/
     max-width: 30rem; 
     width: 100%; /* inline elements do not naturally expand to fill the width of their container so by setting width to 100% we ensure they do take up the full width available, allowing max-width to limit thier size. but block elements have default width 100%*/
+    min-width: 20rem; /* dont't go below a certain width to remain user-friendly */
 }
 
 /* Define the keyframes for the bounce effect */
@@ -143,7 +147,7 @@ section {
 
 /*about-section*/
 .about-body > img {
-    /*the width makes sure it fills the page horizontally always and the max-width ensures that it does not get bigger thann our preference theey are both needed for a responsive design. width 100% is only for inline elelements block elements have them by default*/
+    /*the width makes sure it fills the page horizontally always and the max-width ensures that it does not get bigger than our preference theey are both needed for a responsive design. width 100% is only for inline elelements block elements have them by default*/
     max-width: 30rem;
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -233,6 +237,7 @@ summary {
     padding: 5px 20px;
     border-radius: 9999px; /*quick way to form completely rounded corners*/
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .section-header-h2{
@@ -563,7 +568,7 @@ footer {
     padding: 1rem 2rem;
 
     position: absolute;
-    top: 10px;
+    top: 50px;
     right: 20px;
     z-index: 1000;
     visibility: hidden;
